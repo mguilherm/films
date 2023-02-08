@@ -1,0 +1,51 @@
+.films-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    height: calc(100vh - 4rem);
+    margin: 4rem auto 0;
+    background: var(--white);
+}
+
+.film-list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    transform: scale(0.9);
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+}
+
+.film-list:hover{
+    transform: scale(1);
+
+}
+
+.film-list a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 1rem 0.5rem;
+    background-color: var(--yellow);
+    color: var(--brown);
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    border-radius: 0 0 5px 5px;
+    
+}
+.film-title{
+    position: absolute;
+    top: 1rem;
+    padding: 0.5rem;
+    color: var(--white);
+}
+.film-img{
+    width: 24rem;
+    max-width: 100%;
+}
