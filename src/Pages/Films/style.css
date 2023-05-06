@@ -1,4 +1,35 @@
-.films{
+.filmsDetail{
     margin-top: 4rem;
     color: black;
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh - 4rem);
+}
+
+.filmsDetail-img{
+    width: 100%;
+}
+
+.filmsDetail-blackGradient{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(29,33,36);
+    background: linear-gradient(90deg, rgba(29, 33, 36, 0.84) 35%, rgba(130,133,140,0) 100%);
+    width: 100%;
+    height: calc( 100vh - 4rem);
+}
+
+.filmsDetail-description{
+    position: absolute;
+    top: 35%;
+    left: 5rem;
+    max-width: 50%;
+
+    color: var(--white)
+}
+
+.filmsDetail-title{
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }

@@ -11,6 +11,7 @@ function RoutesApp(){
             <Routes>
                 <Route path='/' element={ <Home/> }/>
                 <Route path='/films/:id' element={ <Films/> }/>
+                
                 <Route path='*' element={ <Error/> }/>
             </Routes>
         </BrowserRouter>

@@ -1,5 +1,5 @@
 import './style.css';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import api from '../../Services/api'
 import { useEffect, useState } from 'react';
 
@@ -10,24 +10,34 @@ function Films(){
 
     useEffect(()=>{
         async function getFilm(){
-            const response = await api.get(`/movie/${id}`,{
+            await api.get(`/movie/${id}`,{
                 params: {
                     api_key: 'd72ec6b99b21fdf730adac7799b7005e',
                     language: 'pt-BR'
                 }
             })
-            setFilmSelected(response.data)
-            console.log(response.data)
+            .then((response)=>{
+                console.log(response.data)
+                setFilmSelected(response.data)
+            })
+            .catch(()=>{
+                <Link to='/'></Link>
+            })
         }
-            getFilm();
+        
+        getFilm();
     }, [])
 
     return(
-        <>
-            <h1 className='films'>{filmSelected.title}</h1>
-            <span>{filmSelected.overview}</span>
-        </>
+        <div className='filmsDetail'>
+            <div className='filmsDetail-blackGradient'></div>
+            <img className='filmsDetail-img' src={`https://image.tmdb.org/t/p/original/${filmSelected.backdrop_path}`} alt={filmSelected.title} />
+            <div className="filmsDetail-description">
+                <h1 className='filmsDetail-title'>{filmSelected.title}</h1>
+                <span>{filmSelected.overview}</span>
+            </div>
+        </div>
     )
 }
 
-export default Films
+export default Films;

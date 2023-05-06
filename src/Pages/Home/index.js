@@ -6,6 +6,7 @@ import './style.css'
 function Home(){
 
     const [films, setFilms] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function loadFilms(){
@@ -16,12 +17,21 @@ function Home(){
                 }
             })
             setFilms(response.data.results)
+            setLoading(false)
         } 
 
         loadFilms();
     }, [])
 
+    if (loading) {
+        return(
+            <div className='loading flex-center'>
+                <div className='loader-animation'></div><br/>
+                <p>Loading...</p>
 
+            </div>
+        );
+    }
 
     return(
         <div className='films-wrapper'>
@@ -29,8 +39,10 @@ function Home(){
                 return(
                     <div key={film.id} className='film-list'>
                         {/* <h1 className='film-title'>{film.title}</h1> */}
+                        <Link to={`/films/${film.id}`}>
                         <img className='film-img' src={`https://image.tmdb.org/t/p/original/${film.poster_path}`} alt={film.title} />
-                        <Link to={`/films/${film.id}`}>Acessar</Link>
+                        <button className='flex-center'>Acessar</button> 
+                        </Link>
                     </div>
                 )
             })}

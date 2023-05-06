@@ -1,6 +1,5 @@
 
 import './App.css';
-import Header from './components/Header';
 import RoutesApp from './routes';
 
 function App() {

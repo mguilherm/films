@@ -9,3 +9,23 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+a{
+  text-decoration: none;
+  color: var(--brown);
+  margin: 0;
+  padding: 0;
+}
+
+button{
+  margin: -4px 0 0 0;
+  padding: 0;
+  cursor: pointer;
+  padding: 1rem 0.5rem;
+  background-color: var(--yellow);
+}
+
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
