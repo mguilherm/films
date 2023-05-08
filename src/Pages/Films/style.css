@@ -10,6 +10,19 @@
     width: 100%;
 }
 
+.filmsDetail-btn + .filmsDetail-btn{
+    background-color: var(--darkred);
+    color: var(--yellow);
+    margin-left: 1rem ;
+}
+
+.filmsDetail-btn{
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: var(--darkred);
+}
+
+
 .filmsDetail-blackGradient{
     position: absolute;
     top: 0;

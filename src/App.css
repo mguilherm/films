@@ -17,15 +17,22 @@ a{
 }
 
 button{
-  margin: -4px 0 0 0;
-  padding: 0;
   cursor: pointer;
+  border: none;
   padding: 1rem 0.5rem;
+  border-radius: 5px;
   background-color: var(--yellow);
+  text-decoration: none;
+
 }
 
 .flex-center{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.text-highlighted{
+  font-weight: bold;
+  margin-top: 1rem;
 }

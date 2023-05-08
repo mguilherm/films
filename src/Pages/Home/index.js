@@ -1,6 +1,7 @@
 import api from '../../Services/api';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Loading from '../../components/Loading';
 import './style.css'
 
 function Home(){
@@ -25,11 +26,7 @@ function Home(){
 
     if (loading) {
         return(
-            <div className='loading flex-center'>
-                <div className='loader-animation'></div><br/>
-                <p>Loading...</p>
-
-            </div>
+            <Loading/>
         );
     }
 

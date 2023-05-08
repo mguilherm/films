@@ -1,12 +1,15 @@
 import './style.css';
 import { Link, useParams } from 'react-router-dom';
-import api from '../../Services/api'
+import api from '../../Services/api';
+import Loading from '../../components/Loading';
+import Button from '../../components/Button';
 import { useEffect, useState } from 'react';
 
 
 function Films(){
     const { id } = useParams()
     const [filmSelected, setFilmSelected] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
         async function getFilm(){
@@ -17,16 +20,25 @@ function Films(){
                 }
             })
             .then((response)=>{
-                console.log(response.data)
-                setFilmSelected(response.data)
+                setFilmSelected(response.data);
+                setLoading(false);
             })
             .catch(()=>{
-                <Link to='/'></Link>
+                console.log('film not found')
             })
         }
-        
         getFilm();
+
+        return ()=>{
+            console.log('unmonted component')
+        }
     }, [])
+
+    if(loading){
+        return(
+            <Loading/>
+        )
+    }
 
     return(
         <div className='filmsDetail'>
@@ -35,6 +47,13 @@ function Films(){
             <div className="filmsDetail-description">
                 <h1 className='filmsDetail-title'>{filmSelected.title}</h1>
                 <span>{filmSelected.overview}</span>
+                <div>
+                    <p className='text-highlighted'>Nota: {Number(filmSelected.vote_average).toFixed(1)}</p>
+                    <div className='filmsDetail-buttons'>
+                        <Button btnName='Trailer'/>
+                        <Button btnName='+ Favoritos'/>
+                    </div>
+                </div>
             </div>
         </div>
     )
