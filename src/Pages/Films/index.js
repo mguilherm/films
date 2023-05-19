@@ -1,5 +1,5 @@
 import './style.css';
-import { Link, useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import api from '../../Services/api';
 import Loading from '../../components/Loading';
 import Button from '../../components/Button';
@@ -7,9 +7,10 @@ import { useEffect, useState } from 'react';
 
 
 function Films(){
-    const { id } = useParams()
-    const [filmSelected, setFilmSelected] = useState([])
-    const [loading, setLoading] = useState(true)
+    const { id } = useParams();
+    const [filmSelected, setFilmSelected] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(()=>{
         async function getFilm(){
@@ -24,15 +25,18 @@ function Films(){
                 setLoading(false);
             })
             .catch(()=>{
-                console.log('film not found')
+                navigate('/', {replace: true});
             })
         }
         getFilm();
 
         return ()=>{
-            console.log('unmonted component')
         }
-    }, [])
+    }, [id, navigate]);
+
+   function teste(){
+    console.log(`fi`)
+   }
 
     if(loading){
         return(
@@ -50,8 +54,8 @@ function Films(){
                 <div>
                     <p className='text-highlighted'>Nota: {Number(filmSelected.vote_average).toFixed(1)}</p>
                     <div className='filmsDetail-buttons'>
-                        <Button btnName='Trailer'/>
-                        <Button btnName='+ Favoritos'/>
+                        <Button btnName='Trailer' btnLink={`http://www.youtube.com/results?search_query=${filmSelected.title} Trailer`}/>
+                        <Button btnName='+ Favoritos' onClick={teste} />
                     </div>
                 </div>
             </div>

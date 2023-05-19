@@ -12,8 +12,8 @@ function Header() {
           </Link>
         </div>
         <div className="header--links">
-            <Link to='/'>Home</Link>
-            <Link to='/films'>Favorite</Link>
+            <Link to='/'>Página Inicial</Link>
+            <Link to='/films'>Favoritos</Link>
         </div>
         
     </div>

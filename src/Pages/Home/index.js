@@ -35,7 +35,6 @@ function Home(){
             {films.map((film)=>{
                 return(
                     <div key={film.id} className='film-list'>
-                        {/* <h1 className='film-title'>{film.title}</h1> */}
                         <Link to={`/films/${film.id}`}>
                         <img className='film-img' src={`https://image.tmdb.org/t/p/original/${film.poster_path}`} alt={film.title} />
                         <button className='flex-center'>Acessar</button> 
