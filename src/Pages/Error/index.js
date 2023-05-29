@@ -8,7 +8,6 @@ function Error(){
             <h2>Ops, something got wrong</h2><br/>
             <Link to='/'>Home</Link>
         </div>
-
     )
 }
 

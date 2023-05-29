@@ -1,3 +1,5 @@
+import {toast } from 'react-toastify';
+
 function Button(props){
     let data = props.data;
     function addToFavorite(){
@@ -7,12 +9,12 @@ function Button(props){
         const hasFilm = favoriteMovies.some((filmsSalved)=> filmsSalved.id === data.id)
 
         if (hasFilm){
-            alert('Filme já está na Lista! ⚠️')
+            toast.warn('Filme já está na Lista!')
             return;
         } else {
             favoriteMovies.push(data);
             localStorage.setItem('@toWatch', JSON.stringify(favoriteMovies));
-            alert('Filme adicionado com sucesso ✅')
+            toast.success('Filme adicionado com sucesso')
         }
 
     }

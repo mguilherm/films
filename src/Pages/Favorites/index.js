@@ -3,6 +3,7 @@ import Card from "../../components/Card";
 import Button from "../../components/Button";
 import "./style.css";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 
 function Favorites() {
@@ -20,6 +21,7 @@ function Favorites() {
 
     setFilms(filteredMoviesList);
     localStorage.setItem('@toWatch', JSON.stringify(filteredMoviesList));
+    toast.success('Filme removido com sucesso')
   }
 
   
