@@ -35,7 +35,7 @@ function Home(){
         <div className='films-wrapper'>
             {films.map((film)=>{
                 return(
-                    <Card film={film}/>
+                    <Card key={film.id} film={film}/>
                 )
             })}
         </div>

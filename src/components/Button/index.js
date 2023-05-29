@@ -1,9 +1,8 @@
 function Button(props){
     let data = props.data;
     function addToFavorite(){
-        const favoriteList = localStorage.getItem('@toWatch');
-        let favoriteMovies = JSON.parse(favoriteList) || [];
-        console.log(favoriteMovies)
+        const favoriteMoviesList = localStorage.getItem("@toWatch");
+        let favoriteMovies = JSON.parse(favoriteMoviesList) || [];
 
         const hasFilm = favoriteMovies.some((filmsSalved)=> filmsSalved.id === data.id)
 

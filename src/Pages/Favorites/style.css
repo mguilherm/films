@@ -14,6 +14,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 
 }
 
@@ -25,10 +26,12 @@
 .favorites-grid .film-list{
     min-width: 200px;
     width: 15%;
+    
 }
 
 .favorites-wrapper p{
     font-size: 1.5rem;
+    color: var(--white)
 }
 
 .favorites-link{
@@ -48,4 +51,14 @@
 
 .favorites-link a{
     margin-top: 2rem;
+}
+
+#favorite-wrapper{
+    position: relative;
+}
+
+#remove-btn{
+    position: absolute;
+    top: 5%;
+    left: 5%;
 }
