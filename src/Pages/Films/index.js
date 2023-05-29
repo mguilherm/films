@@ -4,6 +4,7 @@ import api from '../../Services/api';
 import Loading from '../../components/Loading';
 import Button from '../../components/Button';
 import { useEffect, useState } from 'react';
+import React from 'react';
 
 
 function Films(){
@@ -34,10 +35,6 @@ function Films(){
         }
     }, [id, navigate]);
 
-   function teste(){
-    console.log(`fi`)
-   }
-
     if(loading){
         return(
             <Loading/>
@@ -55,7 +52,7 @@ function Films(){
                     <p className='text-highlighted'>Nota: {Number(filmSelected.vote_average).toFixed(1)}</p>
                     <div className='filmsDetail-buttons'>
                         <Button btnName='Trailer' btnLink={`http://www.youtube.com/results?search_query=${filmSelected.title} Trailer`}/>
-                        <Button btnName='+ Favoritos' onClick={teste} />
+                        <Button btnName='+ Favoritos' toFavorite='true' data={filmSelected}/>
                     </div>
                 </div>
             </div>

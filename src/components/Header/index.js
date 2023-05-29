@@ -13,7 +13,7 @@ function Header() {
         </div>
         <div className="header--links">
             <Link to='/'>Página Inicial</Link>
-            <Link to='/films'>Favoritos</Link>
+            <Link to='/favorites'>Favoritos</Link>
         </div>
         
     </div>
