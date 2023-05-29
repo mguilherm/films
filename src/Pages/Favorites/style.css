@@ -3,8 +3,10 @@
 }
 
 .favorites h1{
-    margin-left: 1%;
-    color: var(--yellow)
+    color: var(--darkred);
+    position: fixed;
+    top: 3%;
+    font-size: 150px;
 }
 
 .favorites-wrapper{
@@ -14,19 +16,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 
 }
 
 .favorites-list{
+    max-height: calc(100vh - 4rem);
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
 }
 
 .favorites-grid .film-list{
-    min-width: 200px;
-    width: 15%;
-    
+    min-width: 300px;
+    max-width: 320px;
+    padding-top: 1rem;
 }
 
 .favorites-wrapper p{
@@ -61,4 +63,10 @@
     position: absolute;
     top: 5%;
     left: 5%;
+}
+
+#remove-btn button{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }

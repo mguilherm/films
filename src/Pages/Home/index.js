@@ -32,12 +32,18 @@ function Home(){
     }
 
     return(
-        <div className='films-wrapper'>
-            {films.map((film)=>{
-                return(
-                    <Card key={film.id} film={film}/>
-                )
-            })}
+        <div>
+            <div className="favorites">
+                <h1>DESTAQUES</h1>
+            </div>
+            <div className='films-wrapper'>
+                {films.map((film)=>{
+                    return(
+                        <Card key={film.id} film={film}/>
+                    )
+                })}
+            </div>
+
         </div>
     )
 }
