@@ -4,6 +4,10 @@
     flex-direction: column;
 }
 
+.loading p{
+  color: var(--white);
+}
+
   
   .loader-animation {
     animation: is-rotating 1s infinite;
