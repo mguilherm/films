@@ -1,7 +1,8 @@
 import api from '../../Services/api';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Loading from '../../components/Loading';
+import Card from '../../components/Card';
+
 import './style.css'
 
 function Home(){
@@ -34,17 +35,10 @@ function Home(){
         <div className='films-wrapper'>
             {films.map((film)=>{
                 return(
-                    <div key={film.id} className='film-list'>
-                        <Link to={`/films/${film.id}`}>
-                        <img className='film-img' src={`https://image.tmdb.org/t/p/original/${film.poster_path}`} alt={film.title} />
-                        <button className='flex-center'>Acessar</button> 
-                        </Link>
-                    </div>
+                    <Card film={film}/>
                 )
             })}
-            
         </div>
-
     )
 }
 

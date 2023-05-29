@@ -30,7 +30,7 @@
     background: rgb(29,33,36);
     background: linear-gradient(90deg, rgba(29, 33, 36, 0.84) 35%, rgba(130,133,140,0) 100%);
     width: 100%;
-    height: calc( 100vh - 4rem);
+    height: calc(100vh - 4rem);
 }
 
 .filmsDetail-description{

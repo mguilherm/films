@@ -6,7 +6,7 @@
     width: 100%;
     height: calc(100vh - 4rem);
     margin: 4rem auto 0;
-    background: var(--white);
+
 }
 
 .film-list{
